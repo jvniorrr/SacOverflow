@@ -91,7 +91,7 @@ export default function FormInput() {
 		const { data: userProfiles, error } = await supabase
 			.from('user')
 			.select('*')
-			.ilike('email', `%${email}%`)
+			.or(`email.ilike.${email}%,name.ilike.${email}%,username.ilike.${email}%`)
 			.limit(3);
 
 		if (error) {
