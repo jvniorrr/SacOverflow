@@ -21,11 +21,14 @@ export const metadata: Metadata = {
 		type: 'website',
 		locale: 'en_US',
 		url: 'https://camel.services/',
-		// site_name: 'CAMEL',
+		title: 'CAMEL',
+
+		siteName: 'CAMEL',
 		description: 'A project management tool for property management.',
 
-		images: [
-			'./public/images/hashemtmp.jpeg',
+		images: [{
+			'url': 'https://apqmqmysgnkmkyesdrnn.supabase.co/storage/v1/object/public/profile-avatars/wyncoservices.png',
+		}
 		],
 	},
 };
