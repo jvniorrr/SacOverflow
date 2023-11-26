@@ -10,7 +10,11 @@ const Layout = ({ children }: Props) => {
 	// for opening and closing sidebar
 	const [showSidebar, setShowSidebar] = useState(false);
 
-	const Hamburger = ({ setter }) => {
+	const Hamburger = ({
+		setter,
+	}: {
+		setter: React.Dispatch<React.SetStateAction<boolean>>;
+	}) => {
 		return (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { faCheck, faWarehouse } from '@fortawesome/free-solid-svg-icons';
+import { faWarehouse } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import React from 'react';
@@ -8,7 +8,7 @@ import { ITicketCardProps } from '@/types/componentTypes';
 
 const TicketCard = ({ ...ticketCard }: ITicketCardProps) => {
 	const formatTimeStamp = (timestamp: Date) => {
-		const options = {
+		const options: Intl.DateTimeFormatOptions = {
 			year: 'numeric',
 			month: '2-digit',
 			day: '2-digit',
