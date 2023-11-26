@@ -203,12 +203,12 @@ const ProjectActivity = () => {
 		],
 	};
 
-	const handleMonthClick = month => {
+	const handleMonthClick = (month: string) => {
 		setCurrentMonth(month);
 	};
 
 	return (
-		<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+		<div className="mx-auto p-6 bg-white shadow-lg rounded-lg">
 			<div className="overflow-x-auto">
 				<table className="min-w-full table-auto rounded-lg">
 					<thead className="bg-gray-200 rounded-t-lg">
@@ -227,39 +227,39 @@ const ProjectActivity = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{monthlyActivities[currentMonth].map(
-							(activity, index) => (
-								<tr
-									key={index}
-									className={`border-b ${
-										index ===
-										monthlyActivities[currentMonth].length -
-											1
-											? 'rounded-bl-lg rounded-br-lg'
-											: ''
-									}`}
-								>
-									<td className="px-4 py-2 flex items-center">
-										<span
-											className={`inline-block w-3 h-3 mr-2 rounded-full ${activity.color}`}
-										></span>
-										{activity.status}
-									</td>
-									<td className="px-4 py-2">
-										{activity.member}
-									</td>
-									<td className="px-4 py-2">
-										{activity.lastUpdated}
-									</td>
-									<td className="px-4 py-2 truncate">
-										{activity.notes}
-									</td>
-									<td className="px-4 py-2">
-										<input type="checkbox" />
-									</td>
-								</tr>
-							),
-						)}
+						{monthlyActivities[
+							currentMonth as keyof typeof monthlyActivities
+						].map((activity: any, index: any) => (
+							<tr
+								key={index}
+								className={`border-b ${
+									index ===
+									monthlyActivities[
+										currentMonth as keyof typeof monthlyActivities
+									].length -
+										1
+										? 'rounded-bl-lg rounded-br-lg'
+										: ''
+								}`}
+							>
+								<td className="px-4 py-2 flex items-center">
+									<span
+										className={`inline-block w-3 h-3 mr-2 rounded-full ${activity.color}`}
+									></span>
+									{activity.status}
+								</td>
+								<td className="px-4 py-2">{activity.member}</td>
+								<td className="px-4 py-2">
+									{activity.lastUpdated}
+								</td>
+								<td className="px-4 py-2 truncate">
+									{activity.notes}
+								</td>
+								<td className="px-4 py-2">
+									<input type="checkbox" />
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>

@@ -40,7 +40,7 @@
 		/* bottom 2/3 of charts */
 		.revenues-chart,
 		.spending-table {
-			@apply w-5/12 h-full;
+			@apply w-5/12 min-h-full;
 		}
 
 		.spending-chart {

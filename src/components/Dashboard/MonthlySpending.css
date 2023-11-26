@@ -2,6 +2,7 @@
 
 @layer base {
 	.monthly-spending-container {
+		@apply h-full;
 	}
 
 	.spending-container {

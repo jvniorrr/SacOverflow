@@ -20,13 +20,13 @@ function SignUpForm() {
 	const [popupMsg, setPopupMsg] = useState('');
 	const router = useRouter();
 
-	const handleSubmit = async e => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 
 		if (!passwordMatch) {
 			return;
 		}
-		const resp = await signupNewUser();
+		const resp: any = await signupNewUser();
 
 		if (resp?.error) {
 			// TODO:  if error message is 'User already registered.' then popup msg populate, redirect to signin as well...

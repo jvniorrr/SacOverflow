@@ -64,7 +64,10 @@ const DashboardPage = async () => {
 				<div id="dashboard-charts">
 					<div className="revenues-chart col-charts">
 						<div className="charts-title">Revenue Chart</div>
-						<RevenueChart className="spending-chart-container" />
+						<RevenueChart
+							id="revenue-chart"
+							className="spending-chart-container"
+						/>
 					</div>
 					<div className="spending-chart col-charts">
 						<div className="charts-title overall-spending">
@@ -84,7 +87,10 @@ const DashboardPage = async () => {
 						<div className="total-earnings-container">
 							<TotalEarningWidget />
 						</div>
-						<SalesTrendWidget {...salesTrendData} />
+						<SalesTrendWidget
+							filterType="month"
+							className={salesTrendData.className}
+						/>
 					</div>
 
 					{/* Project activity log content */}
