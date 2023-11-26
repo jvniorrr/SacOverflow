@@ -60,7 +60,6 @@
 		.earnings-sales-container {
 			@apply flex flex-col items-stretch gap-y-2;
 			@apply w-2/6;
-			/* border: 1px solid green; */
 
 			.total-earnings-container {
 				@apply flex flex-col gap-y-4;

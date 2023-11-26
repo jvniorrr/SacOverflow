@@ -2,7 +2,10 @@ import AddCard from '@/components/projects/AddCard';
 import SearchBar from '@/components/projects/SearchBar/SearchBar';
 import StatusBar from '@/components/projects/StatusBar/StatusBar';
 import TicketCard from '@/components/projects/TicketCard';
+import { getOrganizationMemberRole } from '@/lib/actions';
 import { ITicketCardProps } from '@/types/componentTypes';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const ticketOne: ITicketCardProps = {
@@ -44,7 +47,21 @@ const ticketThree: ITicketCardProps = {
 	},
 };
 
-const page = () => {
+const page = async () => {
+	// check if user has cookie association to select current org.
+	// check if the user has a valid organization stored in their cookies
+	const cookieStore = cookies();
+	const org = cookieStore.get('org')?.value as string;
+
+	// if there is no cookie association with the use ror the org, redirect to the organization page
+	if (!org) {
+		redirect('/organization');
+	}
+	const roleResponse = await getOrganizationMemberRole(org);
+	const role: string = roleResponse?.role || '';
+	if (!role) {
+		redirect('/organization');
+	}
 	return (
 		<div className="w-full">
 			<div className="flex flex-col justify-between md:flex-row m-1">

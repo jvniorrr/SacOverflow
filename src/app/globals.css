@@ -28,7 +28,9 @@ body {
 
 @layer base {
 	#home-section {
-		@apply mb-6;
+		@apply mb-6 flex flex-col gap-y-8;
+
+		@apply overflow-x-clip;
 	}
 
 	.page-title {
@@ -46,5 +48,14 @@ body {
 	#image-content {
 		@apply md:bg-home-image;
 		@apply md:bg-cover md:bg-center;
+		@apply md:h-[65vh];
+
+		@apply flex flex-col justify-center items-center gap-y-4;
+
+		@apply relative;
+	}
+
+	.cards-positioning {
+		@apply relative -bottom-20;
 	}
 }

@@ -3,7 +3,7 @@
 @layer base {
 	#home-card {
 		/* layout */
-		@apply w-3/4 flex flex-col justify-center items-center min-h-full gap-y-4;
+		@apply w-full flex flex-col justify-center items-center min-h-full gap-y-4;
 
 		/* layout padding margining */
 		@apply rounded-md p-6;
@@ -12,12 +12,12 @@
 		@apply border border-b-4 border-primary-green-500 bg-gray-50;
 	}
 
-	#card-title {
+	.card-title {
 		/* text */
-		@apply text-2xl md:text-3xl font-normal;
+		@apply text-base sm:text-lg md:text-3xl font-normal;
 
 		/* layout */
-		@apply text-center justify-start;
+		@apply text-center;
 	}
 
 	.card-content {

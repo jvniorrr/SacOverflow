@@ -4,7 +4,7 @@
 	/* old side navbar content */
 	#side-navbar {
 		/* Mobile props */
-		@apply hidden overflow-y-scroll;
+		@apply hidden overflow-y-hidden;
 
 		/* Default Props */
 		@apply text-gray-400 rounded items-center border border-r-primary-green-100;
@@ -26,7 +26,7 @@
 		/* layout for inner elements */
 		/* @apply flex flex-col justify-between min-h-screen items-stretch h-screen; */
 		@apply flex flex-col justify-between items-stretch;
-		@apply overflow-y-scroll;
+		@apply overflow-y-hidden;
 		@apply transition-all ease-in-out duration-500;
 
 		/* Default Props */

@@ -4,7 +4,7 @@ import Buttons from '@/components/SharedComponents/Buttons';
 
 import { Lexend_Giga } from 'next/font/google';
 
-const inter = Lexend_Giga({ subsets: ['latin'] });
+const lexendGiga = Lexend_Giga({ subsets: ['latin'], weight: '300' });
 
 const cardOneContent = (
 	<p className="leading-6">
@@ -39,7 +39,7 @@ const cardThreeContent = (
 			className="rounded-full w-20 h-20"
 		/>
 		{/* <div className="testimonial-name"> */}
-		<h5 className="testiominal-name font-bold text-primary-green-700">
+		<h5 className="testiominal-name font-bold text-primary-green-700 text-center">
 			Hashem Jaber
 		</h5>
 
@@ -60,24 +60,26 @@ export default function Home() {
 		<main className="flex min-h-screen flex-col items-center justify-between">
 			<section id="home-section">
 				<div id="image-content">
-					<div className={inter.className}>
-						<h3 className="page-title">
-							Cloud Asset Management Enhanced Launcher
-						</h3>
-					</div>
-					<div className="flex flex-col md:flex-row gap-2 p-24 items-center md:items-stretch">
-						<Card
-							title="Our Product"
-							content={cardOneContent}
-						/>
-						<Card
-							title="Features"
-							content={cardTwoContent}
-						/>
-						<Card
-							title="Testimonials"
-							content={cardThreeContent}
-						/>
+					{/* <div className={lexendGiga.className}> */}
+					<h3 className={`page-title ${lexendGiga.className}`}>
+						Cloud Asset Management Enhanced Launcher
+					</h3>
+					{/* </div> */}
+					<div className="cards-positioning">
+						<div className="flex flex-col md:flex-row gap-2 px-16 items-center md:items-stretch">
+							<Card
+								title="Our Product"
+								content={cardOneContent}
+							/>
+							<Card
+								title="Features"
+								content={cardTwoContent}
+							/>
+							<Card
+								title="Testimonials"
+								content={cardThreeContent}
+							/>
+						</div>
 					</div>
 				</div>
 				{/* join us btn */}
